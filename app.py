@@ -1,7 +1,7 @@
 import pandas as pd
 from math import floor
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
 
@@ -84,23 +84,30 @@ rmse = mse ** 0.5
 ss_tot = sum((y - mean_y_test) ** 2 for y in Y_test)
 r_squared = 1 - (sum_squared_error / ss_tot)
 
-print("\nEVALUASI DI DATA TEST:")
-print(f"MAE  = {mae:.2f}")
-print(f"MSE  = {mse:.2f}")
-print(f"RMSE = {rmse:.2f}")
-print(f"R²   = {r_squared:.4f}")
+# print("\nEVALUASI DI DATA TEST:")
+# print(f"MAE  = {mae:.2f}")
+# print(f"MSE  = {mse:.2f}")
+# print(f"RMSE = {rmse:.2f}")
+# print(f"R²   = {r_squared:.4f}")
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    prediction = None
     if request.method == 'POST':
         try:
-            study_hours = float(request.form['study_hours'])
+            study_hours = int(request.form['study_hours'])
             prediction = b0 + b1 * study_hours
             prediction = round(prediction, 2)
+            # Redirect ke halaman hasil dan kirim hasil prediksi lewat URL
+            return redirect(url_for('hasil', prediction=prediction))
         except:
-            prediction = "Input tidak valid"
-    return render_template('index.html', prediction=prediction)
+            return redirect(url_for('hasil', prediction="Input tidak valid"))
+    return render_template('index.html')
+
+@app.route('/hasil')
+def hasil():
+    prediction = request.args.get('prediction')  # Ambil dari URL query
+    return render_template('output.html', prediction=prediction)
 
 if __name__ == '__main__':
     app.run(debug=True)
+

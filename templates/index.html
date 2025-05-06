@@ -33,7 +33,7 @@
                     <h1>Regresi Linier Berganda</h1>
                     <a href="https://lmsspada.kemdiktisaintek.go.id/pluginfile.php/797074/mod_resource/content/1/Analisis_Regresi__Linier_Sederhana%20%281%29.pdf">Referensi</a>
                 </div>
-                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo" class="logo">
+                <img src="{{ url_for('static', filename='img/linier.png') }}" alt="logo" class="logo">
             </div>
             
         </section>
@@ -175,12 +175,17 @@
                             <td><input type="text" id="name" name="name" required></td>
                         </tr>
                         <tr>
-                            <td><label for="study-hours">Lama belajar:</label></td>
-                            <td><input type="number" id="study-hours" name="study-hours" required></td>
+                            <td><label for="study_hours">Lama belajar:</label></td>
+                            <td><input type="number" id="study_hours" name="study_hours" required></td>
                         </tr>
                     </table>
                     <button type="submit">Kirim</button>
                 </form>
+                {% if prediction %}
+                    <div class="prediction-result">
+                        <p>Prediksi nilai ujian kamu: <strong>{{ prediction }}</strong></p>
+                    </div>
+                {% endif %}
             </div>
         </div>
     </main>
