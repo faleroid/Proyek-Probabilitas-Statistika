@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProbStat | Regresi Linier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#group">Profile</a></li>
+                <li><a href="#materi">Content</a></li>
+                <li><a href="#chart">Data</a></li>
+                <li><a href="#about">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- tampilan awal -->
+        <section class="home" id="home">
+            <div class="home-content">
+                <div class="home-title">
+                    <h3>Probabilitas dan Statistika</h3>
+                    <h1>Regresi Linier Berganda</h1>
+                    <a href="https://lmsspada.kemdiktisaintek.go.id/pluginfile.php/797074/mod_resource/content/1/Analisis_Regresi__Linier_Sederhana%20%281%29.pdf">Referensi</a>
+                </div>
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo" class="logo">
+            </div>
+            
+        </section>
+
+        <!-- kelompok -->
+        <section class="group" id="group">
+            <!-- <div class="home-element"><i class="fa-solid fa-users"></i></div> -->
+            <div class="diamond">
+               <img src="{{ url_for('static', filename='img/profile.jpg') }}" alt="diamond">
+            </div>
+            <div class="group-content">
+                <h2>Anggota Kelompok</h2>
+                <ul>
+                    <li>Abimanyu Bhakti Pratama</li>
+                    <li>Dikas Setyo Nugroho</li>
+                    <li>Naufal Satrio Putra</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content" id="content">
+            <div class="main-content">
+                <div class="pengertian">
+                    <h2>Apa itu Regresi Linier Berganda?</h2>
+                    <p>Metode regresi linear berganda adalah alat statistik yang paling umum digunakan untuk memodelkan sebuah data. Dalam regresi ini ada dua macam variabel, yaitu variabel dependen (variabel terikat) dan variabel independen (variabel bebas). Tujuan dari regresi ini untuk mengestimasi serta memprediksi nilai rata-rata variabel dependen atau variabel Y berdasarkan nilai variabel independen atau variabel X yang diketahui.</p>
+                    <p><b>Rumus:</b></p>
+                    <p><span class="rumus">Y = b<sub>0</sub> + b<sub>1</sub>X<sub>1</sub> + b<sub>2</sub>X<sub>2</sub>
+                </div>
+            </div>
+        </section>
+
+        <!-- isi materi -->
+        <section class="materi" id="materi">
+            <div class="materi-content">
+
+                <!-- cara kerja -->
+                <h2>Workflow</h2>
+                <p>
+                    Dalam membangun model Regresi yang baik, kita harus melalui beberapa tahapan, yakni <b>pengumpulan data, data preprocessing, model development, model evaluation, dan model deployment</b>
+                    <br><br>
+                    Hasil akhirnya, Kita akan memprediksi nilai ujian siswa berdasarkan pengaruh dari lamanya jam belajar dan lamanya jam tidur. Terdapat beberapa variabel yang digunakan dalam prosesnya, yakni lama jam belajar dan tidur sebagai variabel independen dan nilai ujian sebagai variabel dependen.
+                </p>
+                
+                <!-- data collection -->
+                <div class="data-collection">
+                    <h2>Data Collection</h2>
+                    <p>
+                        Proses pengumpulan data bisa dilakukan dengan mengambil dataset dari sumber yang sudah tersedia, seperti <a href=https://www.kaggle.com><i>Kaggle</i></a>, <a href=https://www.zenodo.com><i>Zenodo</i></a>, UCI, dan sebagainya. Dari sumber-sumber tersebut, kita dapat memilih, mengunduh, dan menggunakan dataset yang sesuai dengan kebutuhan. Proses ini tergolong cukup mudah, namun tantangannya terletak pada pemilihan dataset yang benar-benar tepat untuk model yang akan kita buat.
+                        <br><br>
+                        Pada kasus ini, kita akan menggunakan dataset kebiasaan siswa yang dapat diunduh pada tombol dibawah.
+                    </p>
+                    <div class="materi-unduh">
+                        <p><span class="unduh-dataset">Unduh Dataset</span> </p>
+                    </div>
+                </div>
+
+                <!-- preprocessing -->
+                <div class="preprocessing">
+                    <h2>Preprocessing</h2>
+                    <p>
+                        Data preprocessing merupakan tahap penting dalam mempersiapkan data agar lebih siap digunakan dalam pengembangan model machine learning. Tujuannya adalah mengubah data mentah menjadi bentuk yang lebih mudah dipahami dan diproses oleh algoritma. Proses ini mencakup tiga komponen utama: data cleaning, data transformation, dan data integration.<br><br>
+                        Pada tahap data cleaning, dilakukan pembersihan data dari masalah seperti nilai yang hilang, duplikasi, ketidakkonsistenan, dan ketidakseimbangan. Selanjutnya, data transformation mengubah data agar sesuai dengan kebutuhan model, seperti melakukan scaling (standardisasi atau normalisasi) dan konversi format data (misalnya, mengubah objek menjadi datetime atau numerik menjadi kategorikal). Terakhir, data integration menggabungkan beberapa dataset, menghapus fitur yang berulang, serta menyamakan format agar data dapat digunakan secara konsisten.
+                        <br><br>
+                        Berikut adalah visualisasi data setelah kita melakukan preprocessing:
+                    </p>
+                </div>
+
+                <section class="chart" id="chart">
+                    <h2>Visualisasi Data</h2>
+                    <div class="chart-content">
+                        <iframe width="100%" height="100vh" src="https://lookerstudio.google.com/embed/reporting/e54c7615-9e46-4759-ace1-79a0587022ae/page/U9nIF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+                    </div>
+                </section>
+
+                <!-- model-development -->
+                <div class="model-development">
+                    <h2>Model Development</h2>
+                    <p>
+                        <q><i>When we have a variety of models of different complexity (e.g., linear or logistic regression models with different degree polynomials, or KNN classifiers with different values of K), how should we pick the right one?</i></q>
+                        <br><br>
+                        Jie Ding dan rekan-rekannya dalam tulisannya yang berjudul “Model Selection Techniques - An Overview” menyampaikan bahwa tidak ada satu pun model yang secara universal cocok untuk semua jenis data dan tujuan analisis. Pemilihan model yang kurang tepat dapat mengarah pada interpretasi yang keliru atau hasil prediksi yang tidak optimal. Misalnya, dalam kasus regresi, kita perlu mengevaluasi model yang paling sesuai untuk data kita, apakah menggunakan regresi linear biasa, ridge regression, atau mungkin regresi lasso, tergantung pada karakteristik data dan tujuan analisis. 
+                        <br><br>
+                        Dalam kasus ini, kita akan menggunakan model regresi linear sederhana dengan output yang diharapkan adalah kita bisa memprediksi nilai ujian siswa berdasarakan jam belajarnya. Proses perhitungan regresi lebih lengkapnya bisa di simak <a href="https://lmsspada.kemdiktisaintek.go.id/pluginfile.php/797074/mod_resource/content/1/Analisis_Regresi__Linier_Sederhana%20%281%29.pdf">di sini</a>
+                        <br><br>
+                        Setelah melakukan pemodelan regresi linier, kita mendapatkan persamaan berikut:
+                        <br><br>
+                        <span class="rumus-regresi">Y = 36.52 + 9.34x</span>
+                        <br><br>
+                        Dari persamaan tersebut, kita bisa menyimpulkan bahwa setiap penambahan 1 jam belajar akan meningkatkan nilai ujian siswa sebesar 9.34. Sedangkan jika siswa tidak belajar sama sekali, maka nilai ujian yang didapatkan adalah 36.
+                    </p>  
+                </div>
+ 
+                <!-- model-evaluation -->
+                <div class="model-evaluation">
+                    <h2>Model Evaluation</h2>
+                    <p>
+                        Pqada tahap ini, kita akan mengevaluasi model yang sudah kita buat. Kita bisa menggunakan beberapa metrik evaluasi, seperti Mean Absolute Error (MAE), Mean Squared Error (MSE), dan R-squared (R²).
+                    </p>
+                    <ul>
+                        <li><b>Mean Absolute Error (MAE)</b> adalah rata-rata dari selisih absolut antara nilai yang diprediksi dan nilai aktual. MAE memberikan gambaran seberapa besar kesalahan prediksi dalam satuan yang sama dengan data asli.</li>
+                        <li><b>Mean Squared Error (MSE)</b> adalah rata-rata dari kuadrat selisih antara nilai yang diprediksi dan nilai aktual. MSE memberikan gambaran seberapa besar kesalahan prediksi, tetapi lebih sensitif terhadap outlier dibandingkan MAE.</li>
+                        <li><b>Root Mean Squared Error (RMSE)</b> adalah akar kuadrat dari MSE. RMSE memberikan gambaran seberapa besar kesalahan prediksi dalam satuan yang sama dengan data asli, dan lebih sensitif terhadap outlier dibandingkan MAE.</li>
+                        <li><b>R-squared (R²)</b> adalah proporsi variasi dalam variabel dependen yang dapat dijelaskan oleh variabel independen. Nilai R² berkisar antara 0 hingga 1, di mana semakin mendekati 1, semakin baik model menjelaskan variasi data.</li>
+                    </ul>
+                    <br>
+                    <p>
+                        Setelah melakukan evaluasi, kita mendapatkan hasil sebagai berikut:
+                    </p>
+                    <div class="evaluation">
+                        <ul>
+                            <li>MAE  = 7.92</li>
+                            <li>MSE  = 93.98</li>
+                            <li>RMSE = 9.69</li>
+                            <li>R²   = 0.688</li>
+                        </ul>
+                    </div>
+                    <br>
+                    <p>
+                        Kesimpulannya, model yang kita gunakan sudah cukup baik dalam memprediksi data, dengan kemampuan menjelaskan sekitar 69% variasi yang ada (R² = 0.688). Rata-rata kesalahan prediksi berada di kisaran 7.92 hingga 9.69 unit (MAE dan RMSE), yang berarti model ini sudah cukup akurat, meskipun masih ada kesalahan yang bisa diperbaiki.
+                    </p>
+                </div>
+
+                <div class="model-deployment">
+                    <h2>Model Deployment</h2>
+                    <p>
+                        Pada tahap ini, kita menerapkan model yang sudah dilatih ke dalam sistem atau aplikasi agar bisa digunakan oleh pengguna. Model siap menerima data baru dan memberikan hasil prediksi secara langsung.
+                    </p>
+                    <img src="static/img/deploy.png" width="550px"/>
+            </div>
+        </section>
+
+        <div clas="form-content">
+            <div class="form-container">
+                <h2>Prediksi nilai kamu?</h2>
+                <form action="/" method="POST" class="prediction-form">
+                    <table>
+                        <tr>
+                            <td><label for="name">Nama kamu:</label></td>
+                            <td><input type="text" id="name" name="name" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="study-hours">Lama belajar:</label></td>
+                            <td><input type="number" id="study-hours" name="study-hours" required></td>
+                        </tr>
+                    </table>
+                    <button type="submit">Kirim</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <ul class="list">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="">About Me</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+        </ul>
+        <p class="copyright">2025 Probabilitas dan Statistika</p>
+    </footer>
+</body>
+</html>
