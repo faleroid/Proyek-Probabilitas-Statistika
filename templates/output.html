@@ -2,11 +2,11 @@
 <html>
 <head>
     <title>Hasil Prediksi</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
 </head>
 <body>
     <h2>Hasil Prediksi Nilai Ujian</h2>
-    <p>Prediksi: {{ prediction }}</p>
+    <p>Halo {{name}} prediksi nilai ujian kamu adalah {{ prediction }}</p>
 
     <a href="/">Kembali ke form</a>
 </body>

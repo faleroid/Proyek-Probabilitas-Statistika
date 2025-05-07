@@ -95,10 +95,11 @@ def index():
     if request.method == 'POST':
         try:
             study_hours = int(request.form['study_hours'])
+            user_name = request.form['name']
             prediction = b0 + b1 * study_hours
             prediction = round(prediction, 2)
             # Redirect ke halaman hasil dan kirim hasil prediksi lewat URL
-            return redirect(url_for('hasil', prediction=prediction))
+            return redirect(url_for('hasil', user_name=user_name, prediction=prediction))
         except:
             return redirect(url_for('hasil', prediction="Input tidak valid"))
     return render_template('index.html')
@@ -106,7 +107,8 @@ def index():
 @app.route('/hasil')
 def hasil():
     prediction = request.args.get('prediction')  # Ambil dari URL query
-    return render_template('output.html', prediction=prediction)
+    user_name = request.args.get('user_name')  # Ambil dari URL query
+    return render_template('output.html', name=user_name, prediction=prediction)
 
 if __name__ == '__main__':
     app.run(debug=True)

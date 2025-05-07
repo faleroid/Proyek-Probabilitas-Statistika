@@ -17,7 +17,7 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#group">Profile</a></li>
-                <li><a href="#materi">Content</a></li>
+                <li><a href="#materi">Workflow</a></li>
                 <li><a href="#chart">Data</a></li>
                 <li><a href="#about">About Us</a></li>
             </ul>
@@ -31,7 +31,7 @@
                 <div class="home-title">
                     <h3>Probabilitas dan Statistika</h3>
                     <h1>Regresi Linier Berganda</h1>
-                    <a href="https://lmsspada.kemdiktisaintek.go.id/pluginfile.php/797074/mod_resource/content/1/Analisis_Regresi__Linier_Sederhana%20%281%29.pdf">Referensi</a>
+                    <a href="#form">Mulai Prediksi Nilaimu</a>
                 </div>
                 <img src="{{ url_for('static', filename='img/linier.png') }}" alt="logo" class="logo">
             </div>
@@ -120,8 +120,10 @@
                         <br><br>
                         Setelah melakukan pemodelan regresi linier, kita mendapatkan persamaan berikut:
                         <br><br>
-                        <span class="rumus-regresi">Y = 36.52 + 9.34x</span>
-                        <br><br>
+                    </p>
+                    <span class="rumus-regresi">Y = 36.52 + 9.34x</span>
+                    <br><br><br>
+                    <p>
                         Dari persamaan tersebut, kita bisa menyimpulkan bahwa setiap penambahan 1 jam belajar akan meningkatkan nilai ujian siswa sebesar 9.34. Sedangkan jika siswa tidak belajar sama sekali, maka nilai ujian yang didapatkan adalah 36.
                     </p>  
                 </div>
@@ -162,32 +164,45 @@
                         Pada tahap ini, kita menerapkan model yang sudah dilatih ke dalam sistem atau aplikasi agar bisa digunakan oleh pengguna. Model siap menerima data baru dan memberikan hasil prediksi secara langsung.
                     </p>
                     <img src="static/img/deploy.png" width="550px"/>
+                </div>
+        </section>
+
+        <section>
+            <div class="form-content" id="form">
+                <div class="form-container">
+                    <h2>Prediksi nilai kamu?</h2>
+                    <form action="/" method="POST" class="prediction-form">
+                        <table>
+                            <tr>
+                                <td><label for="name">Nama kamu:</label></td>
+                                <td><input type="text" id="name" name="name" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="study_hours">Lama belajar:</label></td>
+                                <td><input type="number" id="study_hours" name="study_hours" required></td>
+                            </tr>
+                        </table>
+                        <button type="submit">Kirim</button>
+                    </form>
+                </div>
             </div>
         </section>
 
-        <div clas="form-content">
-            <div class="form-container">
-                <h2>Prediksi nilai kamu?</h2>
-                <form action="/" method="POST" class="prediction-form">
-                    <table>
-                        <tr>
-                            <td><label for="name">Nama kamu:</label></td>
-                            <td><input type="text" id="name" name="name" required></td>
-                        </tr>
-                        <tr>
-                            <td><label for="study_hours">Lama belajar:</label></td>
-                            <td><input type="number" id="study_hours" name="study_hours" required></td>
-                        </tr>
-                    </table>
-                    <button type="submit">Kirim</button>
-                </form>
-                {% if prediction %}
-                    <div class="prediction-result">
-                        <p>Prediksi nilai ujian kamu: <strong>{{ prediction }}</strong></p>
-                    </div>
-                {% endif %}
+        <section>
+            <div class="tentang" id="tentang">
+                <h2>About</h2>
+                <div class="tentang-text">
+                    Proyek ini dibuat sebagai bagian dari tugas mata kuliah Probabilitas dan Statistika, dengan fokus pada materi Regresi Linear Sederhana.
+                    Tujuan dari proyek ini adalah untuk memahami dan mengimplementasikan konsep regresi linear dalam bentuk visualisasi data, serta menginterpretasikan hubungan antara dua variabel melalui pendekatan statistika.
+                </div>
+                <h2>Tools</h2>
+                <div class="tools">
+                    <img src="/static/img/tools.png" width="400px">
+                </div>
             </div>
-        </div>
+        </section>
+
+
     </main>
 
     <footer class="footer">

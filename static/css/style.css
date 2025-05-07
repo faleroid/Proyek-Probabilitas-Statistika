@@ -85,6 +85,7 @@ header{
 .home-title a{
     display: inline-block;
     text-decoration: none;
+    font-weight: bold;
     background: linear-gradient(to right, rgb(40, 212, 184), rgb(30, 97, 86));
     padding: 15px 20px;
     box-shadow: 0 0 10px gb(40, 212, 184);
@@ -220,7 +221,7 @@ header{
     margin-bottom: 20px;
 }
 
-.model-development p .rumus-regresi{
+.model-development .rumus-regresi{
     font-family: 'Times New Roman', Times, serif;
     font-style: italic;
     font-size: 30px;
@@ -413,6 +414,17 @@ table td{
     padding: 0 10px;
 }
 
+.form-content{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+   
+
 .form-container h2{
     font-size: 50px;
     background: linear-gradient(to right, rgb(40, 212, 184), rgb(45, 181, 223));
@@ -431,4 +443,41 @@ table td{
     color: white;
     font-size: 20px;
     cursor: pointer;
+    font-weight: bold;
+}
+
+.prediction-form button:hover{
+    background-color: rgb(33, 182, 157);
+    font-size: 23px;
+}
+
+.tentang{
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100vh;
+    background-color: ;
+    background: linear-gradient(to bottom, rgb(14, 14, 14), rgb(104, 164, 182));
+}
+
+.tentang h2{
+    font-size: 30px;
+    background: linear-gradient(to right, rgb(137, 208, 218), rgb(83, 154, 176));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tentang .tentang-text{
+    padding: 0 120px;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.footer{
+    padding:20px;
+    margin:0;
+    background: linear-gradient(to bottom,rgb(104, 164, 182), rgb(45, 181, 223));
 }
