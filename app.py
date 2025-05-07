@@ -56,14 +56,14 @@ b0 = mean_y - b1 * mean_x
 
 print(f"\nMODEL LATIHAN:\nPersamaan regresi: Y = {b0:.2f} + {b1:.2f}*X")
 
-# Uji t untuk b1
-residuals = [(y - (b0 + b1 * x)) for x, y in zip(X_train, Y_train)]
-s_squared = sum(r**2 for r in residuals) / (n_train - 2)
-s = s_squared ** 0.5
-std_error_b1 = s / ((manual_sum_square(X_train) - n_train * mean_x ** 2) ** 0.5)
-t_hit = b1 / std_error_b1
+# # Uji t untuk b1
+# residuals = [(y - (b0 + b1 * x)) for x, y in zip(X_train, Y_train)]
+# s_squared = sum(r**2 for r in residuals) / (n_train - 2)
+# s = s_squared ** 0.5
+# std_error_b1 = s / ((manual_sum_square(X_train) - n_train * mean_x ** 2) ** 0.5)
+# t_hit = b1 / std_error_b1
 
-print(f"Uji t untuk b1: t hitung = {t_hit:.4f} (bandingkan dengan t tabel df = {n_train - 2})")
+# print(f"Uji t untuk b1: t hitung = {t_hit:.4f} (bandingkan dengan t tabel df = {n_train - 2})")
 
 # TESTING - Evaluasi prediksi
 y_preds = [b0 + b1 * x for x in X_test]

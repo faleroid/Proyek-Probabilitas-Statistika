@@ -30,7 +30,7 @@
             <div class="home-content">
                 <div class="home-title">
                     <h3>Probabilitas dan Statistika</h3>
-                    <h1>Regresi Linier Berganda</h1>
+                    <h1>Regresi Linier Sederhana</h1>
                     <a href="#form">Mulai Prediksi Nilaimu</a>
                 </div>
                 <img src="{{ url_for('static', filename='img/linier.png') }}" alt="logo" class="logo">
@@ -141,7 +141,7 @@
                         <li><b>R-squared (R²)</b> adalah proporsi variasi dalam variabel dependen yang dapat dijelaskan oleh variabel independen. Nilai R² berkisar antara 0 hingga 1, di mana semakin mendekati 1, semakin baik model menjelaskan variasi data.</li>
                     </ul>
                     <br>
-                    <p>
+                    <p class="evaluation">
                         Setelah melakukan evaluasi, kita mendapatkan hasil sebagai berikut:
                     </p>
                     <div class="evaluation">
@@ -153,7 +153,7 @@
                         </ul>
                     </div>
                     <br>
-                    <p>
+                    <p class="evaluation">
                         Kesimpulannya, model yang kita gunakan sudah cukup baik dalam memprediksi data, dengan kemampuan menjelaskan sekitar 69% variasi yang ada (R² = 0.688). Rata-rata kesalahan prediksi berada di kisaran 7.92 hingga 9.69 unit (MAE dan RMSE), yang berarti model ini sudah cukup akurat, meskipun masih ada kesalahan yang bisa diperbaiki.
                     </p>
                 </div>
@@ -192,12 +192,14 @@
             <div class="tentang" id="tentang">
                 <h2>About</h2>
                 <div class="tentang-text">
+                    <p>
                     Proyek ini dibuat sebagai bagian dari tugas mata kuliah Probabilitas dan Statistika, dengan fokus pada materi Regresi Linear Sederhana.
                     Tujuan dari proyek ini adalah untuk memahami dan mengimplementasikan konsep regresi linear dalam bentuk visualisasi data, serta menginterpretasikan hubungan antara dua variabel melalui pendekatan statistika.
+                    </p>
                 </div>
-                <h2>Tools</h2>
-                <div class="tools">
-                    <img src="/static/img/tools.png" width="400px">
+                <div class="tentang-tools">
+                    <h2>Tools</h2>
+                    <span class="tools"><img src="/static/img/tools.png" width="400px"></span>
                 </div>
             </div>
         </section>

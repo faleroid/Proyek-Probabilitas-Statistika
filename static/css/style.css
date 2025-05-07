@@ -263,6 +263,11 @@ header{
     padding: 5px;
 }
 
+.evaluation{
+    display: none;
+
+}
+
 .evaluation ul{
     display: flex;
     margin: 0 50px;
@@ -454,7 +459,7 @@ table td{
 .tentang{
     display: flex;
     flex-flow: column;
-    justify-content: flex-end;
+    justify-content:space-evenly;
     align-items: center;
     height: 100vh;
     background-color: ;
@@ -473,6 +478,10 @@ table td{
     font-size: 18px;
     line-height: 1.5;
     margin-bottom: 35px;
+    text-align: center;
+}
+
+.tentang .tentang-tools{
     text-align: center;
 }
 
