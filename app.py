@@ -4,7 +4,6 @@ from math import floor
 from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
-
 # Fungsi manual
 def manual_sum(data):
     total = 0
